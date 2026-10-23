@@ -6,6 +6,9 @@ plugins {
 repositories {
     mavenCentral()
     mavenLocal()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
@@ -14,6 +17,12 @@ dependencies {
     implementation 'org.apache.camel.quarkus:camel-quarkus-crypto'
     implementation 'org.apache.camel.quarkus:camel-quarkus-core'
     implementation 'io.quarkus:quarkus-arc'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.78.1'
+    implementation 'org.apache.camel:camel-support'
+    implementation 'org.bouncycastle:bcpg-jdk18on:1.78.1'
+    implementation files('lib/jprov_sfnt.jar')
+
+
     testImplementation 'io.quarkus:quarkus-junit'
 }
 
